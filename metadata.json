@@ -1,0 +1,6 @@
+{
+  "name": "Telluric Atlas",
+  "description": "Interactive 3D planetary atlas exploring Earth, Mars, and the Moon with meteor-triggered celestial transitions and planetary science dossiers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

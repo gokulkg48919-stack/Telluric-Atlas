@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #05070d;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Refined dossier scrollbar */
+.dossier-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dossier-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.dossier-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.28);
+  border-radius: 9999px;
+}
+
+.dossier-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.48);
+}
+
+/* KaTeX dark-space legibility adjustments */
+.katex {
+  font-size: 0.98em;
+  color: #f8fafc;
+}
+
+@keyframes meteor-shimmer {
+  0%, 100% {
+    opacity: 0.65;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+}
+
+.meteor-tail-animate {
+  animation: meteor-shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes liquid-meniscus {
+  0%, 100% {
+    border-radius: 18px 22px 19px 23px / 21px 17px 22px 18px;
+  }
+  33% {
+    border-radius: 22px 17px 23px 18px / 18px 22px 17px 21px;
+  }
+  66% {
+    border-radius: 17px 23px 18px 21px / 22px 18px 21px 17px;
+  }
+}
+
+@keyframes water-ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4.2);
+    opacity: 0;
+  }
+}
+
+@keyframes water-caustic-flow {
+  0%, 100% {
+    transform: translateX(-18%) translateY(0);
+  }
+  50% {
+    transform: translateX(18%) translateY(-2px);
+  }
+}
+
+.liquid-water-btn {
+  animation: liquid-meniscus 5.5s ease-in-out infinite;
+}
+
+.liquid-water-caustic {
+  animation: water-caustic-flow 4.2s ease-in-out infinite;
+}
+
+.water-ripple-ring {
+  animation: water-ripple-expand 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meteor-tail-animate,
+  .liquid-water-btn,
+  .liquid-water-caustic,
+  .water-ripple-ring {
+    animation: none;
+  }
+}
